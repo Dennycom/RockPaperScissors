@@ -1,4 +1,4 @@
-console.log("Hello World!");
+console.log("Hello World, game time!");
 
 let humanScore = 0;
 let computerScore = 0;
@@ -28,7 +28,7 @@ console.log(randomNum);
 alert(randomNum); */
 
  function getHumanChoice(){
-    //let userInput = prompt("Rock Paper or Scissors?" , " " );
+    
     let userInput = prompt("Rock, Paper or Scissors?" , " " ); //ask user to choose between Rock, Paper or Scissors
     userInput = userInput.toUpperCase();
     if (userInput == "ROCK") {        
@@ -46,54 +46,52 @@ alert(randomNum); */
  //console.log(testfunction);  //test to see if getHuman function is working properly-what does it output in the console?
 
  
-/*function playRound(humanChoice, computerChoice) {
-    
-     humanChoice = getHumanChoice();
-    
-    // convert any input by user to upper case to make it acceptable even if players input lower case, upper case, mixed upper & lower case etc
-    humanChoice = humanChoice.toUpperCase();
-     computerChoice = getComputerChoice();
-     
 
-    
-    // logic to determine the winner
-    if (humanChoice == "PAPER" && computerChoice == "ROCK" || humanChoice == "ROCK" && computerChoice == "SCISSORS" || humanChoice == "SCISSORS" && computerChoice == "PAPER") {
-        console.log( "You win!!!");
-    }else if (humanChoice == "PAPER" && computerChoice == "SCISSORS" || humanChoice == "ROCK" && computerChoice == "PAPER" || humanChoice == "SCISSORS" && computerChoice == "ROCK") {
-        console.log("You lose, Try again!");
-    }else {
-        console.log("It's a draw!!!");
-    }     
+function playGame(){
 
-
-
-}*/
-//const computerPick = getComputerChoice();
-//const humanPick = getHumanChoice();
-//playRound(computerPick, humanPick);
-
-function playRound(humanChoice, computerChoice){
-    
+function playRound(){
+    let humanChoice = getHumanChoice();
+    let computerChoice = getComputerChoice();
 
    if (humanChoice == "SCISSORS" && computerChoice == "PAPER" || humanChoice == "ROCK" && computerChoice == "SCISSORS" || humanChoice == "PAPER" && computerChoice == "ROCK") {
-
+    console.log("You: " + humanChoice + ", Computer: " + computerChoice); // display each player selection, again on line 63 
     console.log( "You win!!!");
-    humanScore +=1;
+    humanScore +=1; //update score
+    console.log("Your score: " + humanScore + ", Computer Score: " + computerScore); //display each player score, again on line 66
 }else if (humanChoice == "PAPER" && computerChoice == "SCISSORS" || humanChoice == "ROCK" && computerChoice == "PAPER" || humanChoice == 
           "SCISSORS" && computerChoice == "ROCK") {
+    console.log("You: " + humanChoice + ", Computer: " + computerChoice);
     console.log("You lose, Try again!");
-    computerScore = computerScore + 1;
+    computerScore = computerScore + 1; //update score
+    console.log("Your score: " + humanScore + ", Computer Score: " + computerScore);
     
 }else {
+    console.log("You: " + humanChoice + ", Computer: " + computerChoice);
     console.log("It's a draw!!!");
+    console.log("Your score: " + humanScore + ", Computer Score: " + computerScore);
+    
 }     
 
 }
-    let humanChoice = getHumanChoice();
-    let computerChoice = getComputerChoice();
-    playRound(humanChoice, computerChoice);
+    console.log( "ROUND ONE:");
+    playRound();
 
-function playGame() {
-    
+    console.log("ROUND TWO:");
+    playRound();
+    console.log("ROUND THREE");
+    playRound();
+    console.log("ROUND FOUR: ");
+    playRound();
+    console.log("ROUND FIVE:");
+    playRound();
 }
-    
+
+playGame();
+//decide party with most points:
+if ( computerScore > humanScore) {
+    console.log("Overall winner: Computer")
+}else if (humanScore > computerScore) {
+    console.log( "Overall winner: You")
+}else {
+    console.log("It is a draw!");
+}
