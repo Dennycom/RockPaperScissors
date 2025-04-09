@@ -31,6 +31,7 @@ alert(randomNum); */
     
     let userInput = prompt("Rock, Paper or Scissors?" , " " ); //ask user to choose between Rock, Paper or Scissors
     userInput = userInput.toUpperCase();
+    
     if (userInput == "ROCK") {        
         return "ROCK";
     }else if (userInput == "PAPER") {
@@ -53,11 +54,13 @@ function playRound(){
     let humanChoice = getHumanChoice();
     let computerChoice = getComputerChoice();
 
-   if (humanChoice == "SCISSORS" && computerChoice == "PAPER" || humanChoice == "ROCK" && computerChoice == "SCISSORS" || humanChoice == "PAPER" && computerChoice == "ROCK") {
-    console.log("You: " + humanChoice + ", Computer: " + computerChoice); // display each player selection, again on line 63 
+if  (humanChoice == "SCISSORS" && computerChoice == "PAPER" ||
+     humanChoice == "ROCK" && computerChoice == "SCISSORS" ||
+     humanChoice == "PAPER" && computerChoice == "ROCK") {
+    console.log("You: " + humanChoice + ", Computer: " + computerChoice);   // display each player selection, again on line 63 
     console.log( "You win!!!");
     humanScore +=1; //update score
-    console.log("Your score: " + humanScore + ", Computer Score: " + computerScore); //display each player score, again on line 66
+    console.log("Your score: " + humanScore + ", Computer Score: " + computerScore);    //display each player score, again on line 66
 }else if (humanChoice == "PAPER" && computerChoice == "SCISSORS" || humanChoice == "ROCK" && computerChoice == "PAPER" || humanChoice == 
           "SCISSORS" && computerChoice == "ROCK") {
     console.log("You: " + humanChoice + ", Computer: " + computerChoice);
